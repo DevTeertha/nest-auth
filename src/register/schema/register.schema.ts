@@ -5,7 +5,12 @@ export interface RegisterI {
   fname: string;
   lname: string;
   username: string;
-  password: string;
+  _id: any;
+}
+export interface RegisterResponse {
+  status: boolean,
+  message: string,
+  data: RegisterI | object
 }
 export const RegisterSchema = new mongoose.Schema({
   fname: { type: String, required: true },

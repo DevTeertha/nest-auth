@@ -9,6 +9,7 @@ export class LoginController {
   constructor(private readonly LoginService: LoginService) {}
   @Post('login')
   async loginUser(@Body() loginData: LoginDto) {
+    console.log("Login Called!");
     return await this.LoginService.loginAuth(loginData);
   }
 }

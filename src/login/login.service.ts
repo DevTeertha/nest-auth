@@ -27,13 +27,25 @@ export class LoginService {
       if (isMatch) {
         const payload = { username: loginUser.username, _id: loginUser._id };
         return {
-          username: loginUser.username,
-          token: this.jwtService.sign(payload),
+          status: true,
+          message: 'Login Successful!',
+          data: {
+            username: loginUser.username,
+            token: this.jwtService.sign(payload),
+          },
         };
       } else {
-        return null;
+        return {
+          status: false,
+          message: 'Login Failed!',
+          data: {},
+        };
       }
     }
-    return null;
+    return {
+      status: false,
+      message: 'Login Failed!',
+      data: {},
+    };
   }
 }

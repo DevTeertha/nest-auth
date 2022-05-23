@@ -7,8 +7,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    LoginModule,
     RegisterModule,
+    LoginModule,
     MongooseModule.forRoot(
       'mongodb+srv://nestauth:vn9HwItn7En364bz@cluster0.9ekwx.mongodb.net/nest_auth?retryWrites=true&w=majority',
     ),
