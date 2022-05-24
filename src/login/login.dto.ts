@@ -8,3 +8,7 @@ export class LoginDto {
   readonly username: string;
   readonly password: string;
 }
+
+export class TokenDto {
+  readonly token?: string;
+}
